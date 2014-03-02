@@ -15,10 +15,10 @@ public class Base extends Box implements Part, Parent, Child{
 
 
     private boolean hasGrown = false;
-    private long timeToGrow = 20000;
+    private long timeToGrow = 2000;
     private long timeCreated;
 
-    private Part parent;
+    private Parent parent;
 
     private ArrayList<Part> partList = new ArrayList<Part>();
 
@@ -32,13 +32,14 @@ public class Base extends Box implements Part, Parent, Child{
      * @param width width of the base
      * @param height height of the base
      */
-    public Base(Part parent, double x, double width, double height){
-        super(x, parent.getDrawableObject().getDrawY(), 0, 0);
+    public Base(Parent parent, double x, double width, double height){
+        super(x, 0, 0, 0);
         this.parent = parent;
         this.originalX = x;
         this.originalY = getDrawY();
         this.grownWidth = width;
         this.grownHeight = height;
+        parent.addChild(this);
     }
 
     @Override
@@ -52,11 +53,15 @@ public class Base extends Box implements Part, Parent, Child{
     }
 
     @Override
-    public void addChild(Part p) {
-        this.partList.add(p);
+    public boolean addChild(Part p) {
+        if(canGrowMore()){
+            this.partList.add(p);
+            return true;
+        }
+        return false;
     }
     @Override
-    public Part getParent(){
+    public Parent getParent(){
         return parent;
     }
 
@@ -69,7 +74,24 @@ public class Base extends Box implements Part, Parent, Child{
     @Override
     public void draw(){
         super.draw();
-        update(Screen.delta);
+        if(hasParent()){
+            update(Screen.delta);
+        }
+    }
+
+    @Override
+    public boolean canGrowMore(){
+        return hasGrown;
+    }
+
+    @Override
+    public boolean hasParent() {
+        return getParent() != null;
+    }
+
+    @Override
+    public Part getPart(){
+        return this;
     }
 
     public void update(double d) {
@@ -80,9 +102,8 @@ public class Base extends Box implements Part, Parent, Child{
                 double multiplier = left / timeToGrow;
                 setDrawWidth(multiplier * grownWidth);
                 setDrawHeight(multiplier * grownHeight);
-                setDrawX(originalX - getDrawWidth() /  2);
-                System.out.println(multiplier);
-                setDrawY(parent.getDrawableObject().getDrawY() - getDrawHeight());
+                setDrawX(originalX - getDrawWidth() / 2);
+                setDrawY(parent.getPart().getDrawableObject().getDrawY() - getDrawHeight());
             }
         }
     }

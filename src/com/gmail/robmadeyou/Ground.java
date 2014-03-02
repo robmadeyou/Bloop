@@ -33,7 +33,20 @@ public class Ground extends Box implements Part, Parent{
     }
 
     @Override
-    public void addChild(Part p) {
-        this.partList.add(p);
+    public boolean canGrowMore() {
+        return true;
+    }
+
+    @Override
+    public Part getPart(){
+        return this;
+    }
+
+    @Override
+    public boolean addChild(Part p) {
+        if(canGrowMore()){
+            return this.partList.add(p);
+        }
+        return false;
     }
 }

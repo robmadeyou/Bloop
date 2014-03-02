@@ -7,5 +7,7 @@ import java.util.ArrayList;
  */
 public interface Parent {
     ArrayList<Part> getChildren();
-    void addChild(Part p);
+    boolean addChild(Part p);
+    boolean canGrowMore();
+    Part getPart();
 }
