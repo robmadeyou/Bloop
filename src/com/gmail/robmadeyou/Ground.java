@@ -11,6 +11,8 @@ import java.util.ArrayList;
  */
 public class Ground extends Box implements Part, Parent{
 
+    ArrayList<Part> partList = new ArrayList<Part>();
+
     /**
      * Ground acts as a base component for the game. It's the Father/Mother of all
      * other objects in the game.
@@ -22,7 +24,7 @@ public class Ground extends Box implements Part, Parent{
 
     @Override
     public ArrayList<Part> getChildren() {
-        return null;
+        return partList;
     }
 
     @Override
@@ -32,6 +34,6 @@ public class Ground extends Box implements Part, Parent{
 
     @Override
     public void addChild(Part p) {
-
+        this.partList.add(p);
     }
 }
