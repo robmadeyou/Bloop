@@ -9,4 +9,13 @@ Currently the plan is to get enough information from the client to be able to cr
 
 ###Target Audience
 
-The current target audience for this game would be for people over the age of 18, or for anyone who has knowlage/experience of psychedelics before. This game could also be liked by people who enjoyed to fun of playing a platforming game that has a bit of a challange to it in a sense that you have no idea where you are at times.
+The current target audience for this game would be for people over the age of 18, or for anyone who has knowlage/experience of psychedelics before. This game could also be liked by people who enjoyed to fun of playing a platforming game that has a bit of a challange to it in a sense that you have no idea where you are, or what you are even doing at times. As previously said the genre of the game isn't really fixed, although it would be best described as a superimposed remake of a classic mario game and a bad day in the woods.
+
+###Elements
+
+#####Loading screen
+Loading screen will feature a 5 second long animation that will show the company's logo, and a little hint as to what the game might entail. After the laoding screen is finished it will lead to the question screen, asking if the user has anything against, or is physically unable to be anywhere with strobing lights, this is to make sure no one accidentally has an epileptic fit and the owner of the game gets sued.
+
+####Question Screen
+Question screen consists of a few questions that user can answer, or choose not to answer, it alternates the gameplay significantly and makes it possible for people who suffer with epilepsy to be able to play the game with no wowrries. The questions would also alternate the difficulty level, or the complexity of the challanges. Once the questions are answered, or skipped
+
