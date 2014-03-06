@@ -29,5 +29,9 @@ This will contain a copy of the Question screen for the user to change any of th
 As with almost all of the games, there is going to be a high score element, the high score will be calculated by the end level * amount of total score accumulated by the end of the run.
 
 #####Game screen
-The game screen is going to include the actual game, 
+The game screen is going to include the actual game, this is where all the logic and behind the scenes work is going to happen. On the top of the screen - in the center, there is going to be a large score meter that will stay there for the whole time that the player is playing the game, this will only increase. To the left side of the score meter there is going to be the wave number. These two objects are going to be the most important thing in the game as the end score relies on them, the higher the level the higher the score multiplier, it would be possible for someone to get a very large score and only have one level complete, or have a very low score and have very many levels complete so the player would be most likely looking forward to trying to get as high of a balance of score and wave level as possible.
+
+The whole general theme of the game would be very casual, with sprites representing a unisex body, with Non playable characters being able to interfere with the player in a way, and with the textures being smooth and calm.
+
+Unlike many other games, there is no ending to this game, as the player will need to play until they either fall, or get trapped. When this happens, the game wraps up and is directed to the highscores screen where the player will get ranked based on their score.
 
