@@ -17,5 +17,17 @@ The current target audience for this game would be for people over the age of 18
 Loading screen will feature a 5 second long animation that will show the company's logo, and a little hint as to what the game might entail. After the laoding screen is finished it will lead to the question screen, asking if the user has anything against, or is physically unable to be anywhere with strobing lights, this is to make sure no one accidentally has an epileptic fit and the owner of the game gets sued.
 
 #####Question Screen
-Question screen consists of a few questions that user can answer, or choose not to answer, it alternates the gameplay significantly and makes it possible for people who suffer with epilepsy to be able to play the game with no wowrries. The questions would also alternate the difficulty level, or the complexity of the challanges. Once the questions are answered, or skipped
+Question screen consists of a few questions that user can answer, or choose not to answer, it alternates the gameplay significantly and makes it possible for people who suffer with epilepsy to be able to play the game with no wowrries. The questions would also alternate the difficulty level, or the complexity of the challanges. Once the questions are answered, or skipped they will be stored for later use, this is to avoid the user having to answer the questions more than once.
+
+#####Main menu screen
+The main menu will not offer a lot of variety, or oppertunity to do something new, but instead it will act as a linking screen, to join the Options, High scores, and the Game screen together. Upon initial opening of the screen, all of the buttons will be hidden, but over a course of 2 seconds, they will fade in and be visible and clickable for the user. The background of the main menu will be the result of the choices the player made on the question screen, even if the user never made a decision and just skipped.
+
+#####Options screen
+This will contain a copy of the Question screen for the user to change any of their given answers, the options screen will also allow the user to set certain settings, like the sound volume, speed of the game, and the difficulty of the game. There will of course be default values set and if the options haven't been changed everything would stay on defautls.
+
+#####Highscores screen
+As with almost all of the games, there is going to be a high score element, the high score will be calculated by the end level * amount of total score accumulated by the end of the run.
+
+#####Game screen
+The game screen is going to include the actual game, 
 
