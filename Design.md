@@ -20,7 +20,7 @@ Loading screen will feature a 5 second long animation that will show the company
 Question screen consists of a few questions that user can answer, or choose not to answer, it alternates the gameplay significantly and makes it possible for people who suffer with epilepsy to be able to play the game with no wowrries. The questions would also alternate the difficulty level, or the complexity of the challanges. Once the questions are answered, or skipped they will be stored for later use, this is to avoid the user having to answer the questions more than once.
 
 #####Main menu screen
-The main menu will not offer a lot of variety, or oppertunity to do something new, but instead it will act as a linking screen, to join the Options, High scores, and the Game screen together. Upon initial opening of the screen, all of the buttons will be hidden, but over a course of 2 seconds, they will fade in and be visible and clickable for the user. The background of the main menu will be the result of the choices the player made on the question screen, even if the user never made a decision and just skipped.
+The main menu will not offer a lot of variety, or oppertunity to do something new, but instead it will act as a linking screen, to join the Options, High scores, and the Game screen together. Upon initial opening of the screen, all of the buttons will be hidden, but over a course of 2 seconds, they will fade in and be visible and clickable for the user. The background of the main menu will be the result of the choices the player made on the question screen, even if the user never made a decision and just skipped. In the centre of the screen the title will suddenly appear with a sound effect. The title will simply read "Bloop"
 
 #####Options screen
 This will contain a copy of the Question screen for the user to change any of their given answers, the options screen will also allow the user to set certain settings, like the sound volume, speed of the game, and the difficulty of the game. There will of course be default values set and if the options haven't been changed everything would stay on defautls.
@@ -35,3 +35,6 @@ The whole general theme of the game would be very casual, with sprites represent
 
 Unlike many other games, there is no ending to this game, as the player will need to play until they either fall, or get trapped. When this happens, the game wraps up and is directed to the highscores screen where the player will get ranked based on their score.
 
+####Visual requirements
+
+The main aim of the game is to make sure it's visible for everyone, including different sizes of monitors. I had decided to make the font size at least 14px large for most cases. Most cases would apply for things like informative text and general descriptions. How ever for areas like Titles the font size will vary, but will be more than large enough for the user to see clearly what is written.
