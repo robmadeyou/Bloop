@@ -14,7 +14,7 @@ The current target audience for this game would be for people over the age of 18
 ###Elements
 
 #####Loading screen
-Loading screen will feature a 5 second long animation that will show the company's logo, and a little hint as to what the game might entail. After the laoding screen is finished it will lead to the question screen, asking if the user has anything against, or is physically unable to be anywhere with strobing lights, this is to make sure no one accidentally has an epileptic fit and the owner of the game gets sued.
+Loading screen will feature a 3 second long wait that will show a black screen, after the 3 seconds are over - the title of the screen will fade in and will stay there for two more seconds. After this the screen will fade through black and open the Question screen.
 
 #####Question Screen
 Question screen consists of a few questions that user can answer, or choose not to answer, it alternates the gameplay significantly and makes it possible for people who suffer with epilepsy to be able to play the game with no wowrries. The questions would also alternate the difficulty level, or the complexity of the challanges. Once the questions are answered, or skipped they will be stored for later use, this is to avoid the user having to answer the questions more than once.
