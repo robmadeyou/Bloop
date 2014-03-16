@@ -14,6 +14,7 @@ public class Player extends Entity{
     Animation skeleton = new Animation(TextureLoader.createTexture("res/animations/skeleton/1.png"),2);
     public Player(double x, double y){
         super(x, y, 30, 60);
+        setUseTranslate(true);
         skeleton.add(TextureLoader.createTexture("res/animations/skeleton/2.png"))
                               .add(TextureLoader.createTexture("res/animations/skeleton/3.png"))
                               .add(TextureLoader.createTexture("res/animations/skeleton/4.png"));
