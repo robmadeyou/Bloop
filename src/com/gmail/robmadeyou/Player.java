@@ -11,40 +11,40 @@ import com.age.logic.input.Keyboard;
 public class Player extends Entity{
 
 
-    Animation skeleton = new Animation(TextureLoader.createTexture("res/animations/skeleton/1.png"),2);
+    Animation anim = new Animation(TextureLoader.createTexture("res/running.png",0,0,64,128));
     public Player(double x, double y){
-        super(x, y, 30, 60);
-        setUseTranslate(true);
-        skeleton.add(TextureLoader.createTexture("res/animations/skeleton/2.png"))
-                              .add(TextureLoader.createTexture("res/animations/skeleton/3.png"))
-                              .add(TextureLoader.createTexture("res/animations/skeleton/4.png"));
-        setTexture(skeleton.getCurrentTexture());
+        this(x, y, 64, 128);
+        for(int i = 0; i < 8; i++){
+            for(int j = 0; j < 9; j++){
+                if(j != 8 && i != 7 && i != 6){
+                    anim.add(TextureLoader.createTexture("res/running.png",57 * j, 128 * i,56,128));
+                }
+            }
+        }
+        setTexture(anim.get(0));
+
+    }
+    public Player(double x, double y, double width, double height){
+        super(x,y,width,height);
     }
 
     @Override
     public void update(double delta){
-        super.update(delta);
-        if(Keyboard.isKeyDown(Keyboard.Key.D)){
-            moveRight();
-        }else if(Keyboard.isKeyDown(Keyboard.Key.A)){
+
+        if(Keyboard.isKeyDown(Keyboard.Key.A)){
             moveLeft();
+            setInvertsX(true);
+            setTexture(anim.getCurrentTexture());
+        }else if(Keyboard.isKeyDown(Keyboard.Key.D)){
+            moveRight();
+            setInvertsX(false);
+            setTexture(anim.getCurrentTexture());
+        }else{
+            setTexture(anim.get(22));
         }
         if(Keyboard.isKeyDown(Keyboard.Key.Space)){
-            jump(-5);
+            jump(-4);
         }
-    }
-
-    @Override
-    public boolean moveLeft(){
-        setTexture(skeleton.getCurrentTexture());
-        setInvertsX(true);
-        return super.moveLeft();
-    }
-
-    @Override
-    public boolean moveRight(){
-        setTexture(skeleton.getCurrentTexture());
-        setInvertsX(false);
-        return super.moveRight();
+        super.update(delta);
     }
 }
