@@ -14,4 +14,12 @@ public class Timer {
     public boolean isDone(){
         return System.currentTimeMillis() - startTime >= duration;
     }
+
+    public void reset(){
+        startTime = System.currentTimeMillis();
+    }
+
+    public void reset(long duration){
+
+    }
 }

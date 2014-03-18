@@ -11,7 +11,7 @@ public class Bloop {
     public static GameView game;
 
     public static void main(String... args){
-        Game g = new Game("",600,500);
-        g.start(new TitleView());
+        Game g = new Game("",800,500);
+        g.start(new GameView());
     }
 }

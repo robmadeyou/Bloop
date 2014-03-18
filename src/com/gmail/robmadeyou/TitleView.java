@@ -1,12 +1,11 @@
 package com.gmail.robmadeyou;
 
 import com.age.Age;
-import com.age.Game;
 import com.age.Screen;
 import com.age.View;
-import com.age.event.EventEmitterOnDotCreate;
-import com.age.graphics.Drawable;
+import com.age.graphics.effects.Color;
 import com.age.graphics.effects.Emitter;
+import com.age.graphics.effects.TextureLoader;
 import com.age.graphics.ui.Image;
 import com.age.helper.Random;
 
@@ -24,18 +23,23 @@ public class TitleView extends View{
     @Override
     public void init() {
         title =(Image) new Image(Screen.getWidth() / 2 - 100, Screen.getHeight() / 2 - 50, 200,100).toEngine();
+        title.setTexture(TextureLoader.createTexture("res/Title.png"));
         t = new Timer(3000);
-        title.setIsVisible(false);
+        title.setOpacity(0f);
     }
 
     @Override
     public void dispose() {
+
     }
 
     @Override
     public void update() {
-        if(t.isDone()){
-            title.setIsVisible(true);
+        if(title.getOpacity() >= 1 && t.isDone()){
+            t.reset();
+            getGame().changeView(new MenuView());
+        }else if(title.getOpacity() < 1 && t.isDone()){
+            title.setOpacity(title.getOpacity() + 0.05f);
         }
     }
 }
