@@ -2,7 +2,6 @@ package com.gmail.robmadeyou;
 
 
 import com.age.graphics.render.shapes.Box;
-import com.age.graphics.ui.Gui;
 import com.age.logic.input.Mouse;
 
 
@@ -20,11 +19,11 @@ public class Button extends Box{
         super.render();
         if(isMouseOver()){
             if(getOpacity() < 1){
-                setOpacity(getOpacity() + 0.05f);
+                setOpacity(getOpacity() + 0.025f);
             }
         }else{
             if(getOpacity() > 0){
-                setOpacity(getOpacity() - 0.05f);
+                setOpacity(getOpacity() - 0.025f);
             }
         }
     }

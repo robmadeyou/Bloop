@@ -22,4 +22,8 @@ public class Timer {
     public void reset(long duration){
 
     }
+
+    public long timeLeft(){
+        return duration - (System.currentTimeMillis()-startTime);
+    }
 }
