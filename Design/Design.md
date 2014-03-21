@@ -1,15 +1,15 @@
 ###Robert Ellis
 ###S3 Computer Science
 
-My client has asked me to create a game that will feature "Mario like game mechanics" with a psychedelic feeling that is going to keep the player either interested, or creeped out.
+My client has asked me to create a game that will feature "Mario like game mechanics" with a creative feeling and a unique game play style.
 
-I'm going to need a lot more information about what the client is thinking about the psychedelic feeling of the game and make sure I meet their specific requirements. I am also going to need more information about the types of objects and the textures of the game, to make sure that I'm touching on every aspect of the clients wished product.
+I'm going to need a lot more information about what the client is thinking about the creative feeling of the game and make sure I meet their specific requirements. I am also going to need more information about the types of objects and the textures of the game, to make sure that I'm touching on every aspect of the clients wished product.
 
 Currently the plan is to get enough information from the client to be able to create a detailed plan of the game, it will then be crutial to make sure that the client agrees with the plan and is happy for me to go into the development stage. During the development of the game I will be using a community edition of a free software called Intellij IDEA, it is a tool that lets developers write code in a much faster manner. I will first start with working on the engine side and then continue on to fixing cosmetic bugs and making sure that the code, and the interface is as readable as possible. After extensively developing the Engine, and having the initial idea of the game ready, I will then use a graphic editing software called Gimp, this software will allow me to create textures, that will be seen in the game and which will ultimately add the theme, and the overall genre of the game.
 
 ###Target Audience
 
-The current target audience for this game would be for people over the age of 18, or for anyone who has knowlage/experience of psychedelics before. This game could also be liked by people who enjoyed to fun of playing a platforming game that has a bit of a challange to it in a sense that you have no idea where you are, or what you are even doing at times. As previously said the genre of the game isn't really fixed, although it would be best described as a superimposed remake of a classic mario game and a bad day in the woods.
+The current target audience for this game would be for all audiences that enjoy a bit of creativity. This game could also be liked by people who enjoyed to fun of playing a platforming game that has a bit of a challange to it in a sense that you have no idea where you are, or what you are even doing at times. As previously said the genre of the game isn't really fixed, although it would be best described as a superimposed remake of a classic mario game and a bad day in the woods.
 
 ###Elements
 
@@ -17,7 +17,7 @@ The current target audience for this game would be for people over the age of 18
 Loading screen will feature a 3 second long wait that will show a black screen, after the 3 seconds are over - the title of the screen will fade in and will stay there for two more seconds. After this the screen will fade through black and open the Question screen.
 
 #####Question Screen
-Question screen consists of a few questions that user can answer, or choose not to answer, it alternates the gameplay significantly and makes it possible for people who suffer with epilepsy to be able to play the game with no wowrries. The questions would also alternate the difficulty level, or the complexity of the challanges. Once the questions are answered, or skipped they will be stored for later use, this is to avoid the user having to answer the questions more than once.
+Question screen consists of a few questions that user can answer, or choose not to answer, it alternates the gameplay significantly and makes it suitable for people who are against rapidly flashing screens. The questions would also alternate the difficulty level, or the complexity of the challanges. Once the questions are answered, or skipped they will be stored for later use, this is to avoid the user having to answer the questions more than once.
 
 #####Main menu screen
 The main menu will not offer a lot of variety, or oppertunity to do something new, but instead it will act as a linking screen, to join the Options, High scores, and the Game screen together. Upon initial opening of the screen, all of the buttons will be hidden, but over a course of 2 seconds, they will fade in and be visible and clickable for the user. The background of the main menu will be the result of the choices the player made on the question screen, even if the user never made a decision and just skipped. In the centre of the screen the title will suddenly appear with a sound effect. The title will simply read "Bloop"
@@ -37,4 +37,4 @@ Unlike many other games, there is no ending to this game, as the player will nee
 
 ####Visual requirements
 
-The main aim of the game is to make sure it's visible for everyone, including different sizes of monitors. I had decided to make the font size at least 14px large for most cases. Most cases would apply for things like informative text and general descriptions. How ever for areas like Titles the font size will vary, but will be more than large enough for the user to see clearly what is written.
+The main aim of the game is to make sure it's visible for everyone, including different sizes of monitors. I had decided to make the font size at least 14px large for most cases. Most cases would apply for things like informative text and general descriptions. How ever for areas like Titles the font size will vary, but will be more than large enough for the user to see clearly what is written. All of the menu screens follow an RGB pattern, where all buttons are either red, green or blue, this is done to avoid overusing colors and making sure that nothing is "in your face"
