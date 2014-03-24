@@ -22,4 +22,28 @@
   * All borders
     * Play border
     * High Scores border
-    * Options border
+    * Options border<br>
+
+2.7. Sound is playing and audible<br>
+
+###Options
+
+3.1. Back button leads back to Main menu<br>
+3.2. Back button border activates on mouse highlighting<br>
+3.3. Back button border hides when mouse is away from the button<br>
+3.4. Changing options actually changes the options<br>
+  * Volume changes
+  * Level difficulty changes
+  * Game speed changes
+  * Intensity changes<br>
+
+3.5. Options are saved once the screen is exited<br>
+
+###High Scores
+
+4.1. Back button leads back to Main menu<br>
+4.2. Back button border activates on mouse highlighting<br>
+4.3. Back button border hides when mouse is away from the button<br>
+4.4. High scores are displayed in order (Highest to lowest)
+4.5. High scores have an identifier to recognize who is the author of the high score
+4.6. High scores update after a game has been played
