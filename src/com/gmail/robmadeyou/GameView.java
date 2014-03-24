@@ -23,7 +23,7 @@ public class GameView extends View{
     Timer countdownTimer;
     Text countdownText;
     int wallIndex = 0;
-    int wallDelay = 20;
+    int wallDelay = 5;
     int wallDelayCurrent = 0;
 
     Text playerText;
@@ -42,36 +42,37 @@ public class GameView extends View{
         wallText = (Text) new Text("Wall", Screen.getWidth() / 2 - 200, 75).toEngine();
 
         score = (Text) new Text("", 200,0).toEngine();
-        World.load(new World(32,200,30));
-        p =(Player) new Player(100,20).toEngine();
-        p.setUseTranslate(true);
         countdownText = (Text) new Text("", 250,100).toEngine();
-        countdownTimer = new Timer(12000);
+        p =(Player) new Player(100,20).toEngine();
+        World.load(new World(32,200,30));
+        p.setUseTranslate(true);
+        countdownTimer = new Timer(24000);
         Age.cameraMain.setTarget(p);
         TileType dirt = new TileType(TextureLoader.createTexture("res/dirt.png"), true, "DIRT");
         TileType topGrass = new TileType(TextureLoader.createTexture("res/grassTop.png"), true, "GRASS_TOP");
-
-        World.activeWorld.load();
+        if(World.activeWorld == null){
+            World.activeWorld.load();
+        }
         for(int k = 0; k < 1; k++){
-        for(int i = 0; i < World.activeWorld.get().length; i++){
-            for(int j = 0; j < World.activeWorld.get()[i].length; j++){
-                try{
-                    if(World.activeWorld.get()[i][j].isSolid()){
-                        if(Math.random() >= 0.7){
-                            int duration = (int)(Math.random() * 10);
-                            for(int l = 0; l < duration; l++){
-                                World.activeWorld.get()[i][j-1*l].setType(TileType.BRICK);
-                                if(duration >= 5 || true){
-                                    if(l <= duration / 2){
-                                        World.activeWorld.get()[i-1][j-1*l].setType(TileType.BRICK);
+            for(int i = 0; i < World.activeWorld.get().length; i++){
+                for(int j = 0; j < World.activeWorld.get()[i].length; j++){
+                    try{
+                        if(World.activeWorld.get()[i][j].isSolid()){
+                            if(Math.random() >= 0.7){
+                                int duration = (int)(Math.random() * 10);
+                                for(int l = 0; l < duration; l++){
+                                    World.activeWorld.get()[i][j-1*l].setType(TileType.BRICK);
+                                    if(duration >= 5 || true){
+                                        if(l <= duration / 2){
+                                            World.activeWorld.get()[i-1][j-1*l].setType(TileType.BRICK);
+                                        }
                                     }
                                 }
                             }
                         }
-                    }
-                }catch(ArrayIndexOutOfBoundsException e){}
+                    }catch(ArrayIndexOutOfBoundsException e){}
+                }
             }
-        }
         }
         for(int i = 0; i < World.activeWorld.get().length; i++){
             for(int j = 0; j < World.activeWorld.get()[i].length; j++){
@@ -90,21 +91,23 @@ public class GameView extends View{
 
     @Override
     public void update(){
-        if(Keyboard.isKeyDown(Keyboard.Key.R)){
-            World.activeWorld.save("save.txt");
-        }
+
         score.set("&?50SCORE "+ Math.round(p.getDrawX() / World.activeWorld.getDimensions()));
         countdownText.set("Time left " + countdownTimer.timeLeft() / 1000);
         wallDelayCurrent++;
+
         if(wallDelay < wallDelayCurrent){
             if(wallIndex < 2000){
-                wallIndex++;
+                if(World.activeWorld.get().length > wallIndex){
+                    wallIndex++;
+                    for(int i = 0; i < World.activeWorld.get()[wallIndex].length; i++){
+                        World.activeWorld.get()[wallIndex][i].setType(TileType.BRICK);
+                    }
+                }
             }
             wallDelayCurrent = 0;
         }
-        for(int i = 0; i < World.activeWorld.get()[wallIndex].length; i++){
-            World.activeWorld.get()[wallIndex][i].setType(TileType.BRICK);
-        }
+
         if(countdownTimer.isDone() || Math.round(p.getDrawX() / World.activeWorld.getDimensions()+1) <= wallIndex){
             getGame().changeView(Bloop.menuView);
         }
