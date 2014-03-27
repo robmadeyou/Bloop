@@ -13,6 +13,7 @@ public class Player extends Entity{
 
 
     Animation anim = new Animation(TextureLoader.createTexture("res/running.png",0,0,64,128));
+    private float jumpHeight = -4;
     public Player(double x, double y){
         this(x, y, 64, 128);
         setSpeed(2);
@@ -30,8 +31,17 @@ public class Player extends Entity{
         super(x, y, width, height);
     }
 
+    public void setJumpHeight(float height){
+        this.jumpHeight = height;
+    }
+
+    public float getJumpHeight(){
+        return jumpHeight;
+    }
+
     @Override
     public void update(double delta){
+
         if(Keyboard.isKeyDown(Keyboard.Key.D)){
             moveRight();
             setInvertsX(false);
@@ -40,7 +50,7 @@ public class Player extends Entity{
             setTexture(anim.get(0));
         }
         if(Keyboard.isKeyDown(Keyboard.Key.Space)){
-            jump(-4);
+            jump(jumpHeight);
         }
         super.update(delta);
     }

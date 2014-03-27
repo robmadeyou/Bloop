@@ -50,6 +50,8 @@ public class GameView extends View{
         score = (Text) new Text("", 200,0).toEngine();
         countdownText = (Text) new Text("", 250,100).toEngine();
         p =(Player) new Player(100,20).toEngine();
+        p.setGravity(p.getGravity() - (float)(Bloop.currentLevel) / 90);
+        p.setJumpHeight(p.getJumpHeight() - Bloop.currentLevel / 5);
         World.load(new World(32,200,50));
         p.setUseTranslate(true);
         countdownTimer = new Timer(24000);
@@ -68,7 +70,7 @@ public class GameView extends View{
                                 int duration = (int)(Math.random() * 10 + Bloop.currentLevel);
                                 for(int l = 0; l < duration; l++){
                                     World.activeWorld.get()[i][j-1*l].setType(TileType.BRICK);
-                                    if(duration >= 5 || true){
+                                    if(duration >= 5){
                                         if(l <= duration / 2){
                                             World.activeWorld.get()[i-1][j-1*l].setType(TileType.BRICK);
                                         }
@@ -122,6 +124,7 @@ public class GameView extends View{
         if(countdownTimer.isDone() || Math.round(p.getDrawX() / World.activeWorld.getDimensions()+1) <= wallIndex){
             onDeath();
         }
+
         playerText.setDrawX((Screen.getWidth()  / 2 - 200) + (((Screen.getWidth() / 2 + 200) - (Screen.getWidth() / 2 - 200)) * ((p.getDrawX() / World.activeWorld.getDimensions()) / World.activeWorld.get().length)));
         wallText.setDrawX((Screen.getWidth() / 2 - 200) + (((Screen.getWidth() / 2 + 200) - (Screen.getWidth() / 2 - 200)) * ((double)(wallIndex) / World.activeWorld.get().length)));
         Bloop.currentScore = (int) Math.round(p.getDrawX() / World.activeWorld.getDimensions()) * Bloop.currentLevel;
