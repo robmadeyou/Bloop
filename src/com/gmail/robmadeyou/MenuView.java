@@ -71,7 +71,6 @@ public class MenuView extends View {
         }else if(optionsButton.isPressed()){
             //TODO add options
         }
-
     }
 
     @Override

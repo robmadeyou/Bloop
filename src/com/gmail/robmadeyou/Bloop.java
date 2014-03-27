@@ -13,8 +13,11 @@ public class Bloop {
     public static View titleView = new TitleView();
     public static View highScoresView = new HighScoresView();
 
+    public static int currentScore = 0;
+    public static int currentLevel = 1;
+
     public static void main(String... args){
-        Game g = new Game("",800,500);
+        Game g = new Game("",1920,1080);
         g.start(new TitleView());
     }
 }
