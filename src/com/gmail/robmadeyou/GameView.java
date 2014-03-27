@@ -135,6 +135,7 @@ public class GameView extends View{
         if(view.addScore(new HighScoresEntry(JOptionPane.showInputDialog("What is your name?"), Bloop.currentScore))){
             JOptionPane.showMessageDialog(null, "Congratulations, you're in the high scores!");
         }
+        Bloop.currentLevel = 1;
         getGame().changeView(Bloop.menuView);
     }
 

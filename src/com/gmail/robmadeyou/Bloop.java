@@ -17,7 +17,7 @@ public class Bloop {
     public static int currentLevel = 1;
 
     public static void main(String... args){
-        Game g = new Game("",1920,1080);
+        Game g = new Game("", 800,600);
         g.start(new TitleView());
     }
 }
