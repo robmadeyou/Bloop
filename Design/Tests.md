@@ -55,9 +55,11 @@
 5.2. Wall moves forward<br>
 5.3. Wall increases in speed with the current level<br>
 5.4. If player is stuck in wall, game ends<br>
+####GUI
 5.5. Score label is updated as the player runs to the right <br>
 5.6. Score increments apropriately, meaning the algorithm "current level * current location" is apropriately calculated<br>
 5.7. The "Map" GUI updates, with the wall and the player being appropriately located on the line of path<br>
+####Player
 5.8. The player is able to move right, but not left<br>
 5.9. The player is able to jump<br>
 5.10. Player speed increases every level<br>
