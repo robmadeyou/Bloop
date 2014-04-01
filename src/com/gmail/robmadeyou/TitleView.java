@@ -3,6 +3,7 @@ package com.gmail.robmadeyou;
 import com.age.Age;
 import com.age.Screen;
 import com.age.View;
+import com.age.event.Event;
 import com.age.graphics.effects.Color;
 import com.age.graphics.effects.Emitter;
 import com.age.graphics.effects.TextureLoader;
@@ -16,6 +17,7 @@ public class TitleView extends View{
 
     Image title;
     Timer t;
+    Emitter e;
     public TitleView(){
         super("TitleView");
     }
@@ -26,6 +28,8 @@ public class TitleView extends View{
         title.setTexture(TextureLoader.createTexture("res/Title.png"));
         t = new Timer(3000);
         title.setOpacity(0f);
+        e =(Emitter) new Emitter(40,40,10,10,2f).toEngine();
+        e.setOnDotCreate(e -> System.out.println(""));
     }
 
     @Override
