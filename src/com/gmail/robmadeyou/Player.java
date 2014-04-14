@@ -40,12 +40,18 @@ public class Player extends Entity{
     }
 
     @Override
+    public boolean moveRight(){
+        setInvertsX(false);
+        setTexture(anim.getCurrentTexture());
+        return super.moveRight();
+    }
+
+    @Override
     public void update(double delta){
 
         if(Keyboard.isKeyDown(Keyboard.Key.D)){
             moveRight();
-            setInvertsX(false);
-            setTexture(anim.getCurrentTexture());
+
         }else{
             setTexture(anim.get(0));
         }

@@ -29,7 +29,6 @@ public class TitleView extends View{
         t = new Timer(3000);
         title.setOpacity(0f);
         e =(Emitter) new Emitter(40,40,10,10,2f).toEngine();
-        e.setOnDotCreate(e -> System.out.println(""));
     }
 
     @Override
