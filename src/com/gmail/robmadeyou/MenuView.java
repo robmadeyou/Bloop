@@ -6,11 +6,8 @@ import com.age.graphics.effects.Color;
 import com.age.graphics.effects.TextureLoader;
 import com.age.graphics.ui.Text;
 import com.age.graphics.ui.Image;
-import com.age.world.TileType;
 
-/**
- * Created by Aaapex on 18/03/14.
- */
+
 public class MenuView extends View {
 
 
@@ -69,7 +66,7 @@ public class MenuView extends View {
         }else if(highButton.isPressed()){
             getGame().changeView(Bloop.highScoresView);
         }else if(optionsButton.isPressed()){
-            //TODO add options
+            getGame().changeView(Bloop.optionsView);
         }
     }
 

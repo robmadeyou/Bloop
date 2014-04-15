@@ -1,7 +1,6 @@
 package com.gmail.robmadeyou;
 
 import com.age.Game;
-import com.age.Screen;
 import com.age.View;
 
 /**
@@ -22,10 +21,15 @@ public class Bloop {
      */
     public static View highScoresView = new HighScoresView();
     /**
+     * Options view to change a few options to make the play style somewhat unique
+     */
+    public static View optionsView = new OptionsView();
+    /**
      * Current score is held in here to make sure all classes can get
      * the score
      */
     public static int currentScore = 0;
+
     /**
      * Current level, reason for starting at 1 is because on the first
      * level the score wouldn't go up, as the score is calculated
