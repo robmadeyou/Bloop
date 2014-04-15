@@ -16,9 +16,14 @@ public class HighScoresView extends View {
 
     Text title;
     Text backText;
+    /**
+     * Array holding the three high score labels.
+     */
     Text[] HighScoresText = new Text[3];
     Button backButton;
-
+    /**
+     * Array holding the three high scores;
+     */
     HighScoresEntry[] highScores = new HighScoresEntry[3];
 
     /**
@@ -85,6 +90,10 @@ public class HighScoresView extends View {
 
     }
 
+    /**
+     * Loads high scores from a text file and places them
+     * in the high score array
+     */
     public void loadHighScores(){
         try{
             String tmp;
@@ -104,6 +113,9 @@ public class HighScoresView extends View {
         }catch(Exception e){ e.printStackTrace(); System.out.println("File wasn't able to load");};
     }
 
+    /**
+     * Basically dumps the high scores to a text file for further loading
+     */
     public void saveHighScores(){
         String toSave = "";
         if(highScores != null){
@@ -118,6 +130,12 @@ public class HighScoresView extends View {
         }catch(IOException e){ e.printStackTrace(); System.out.println("Unable to save the high scores!");}
     }
 
+    /**
+     * Wrapped up method for adding high scores, will eliminate
+     * the need for repetitive code and make code tidier in general
+     * @param entry High scores entry that you would like to add
+     * @return if the score was actually added to the list or not
+     */
     public boolean addScore(HighScoresEntry entry){
         Arrays.sort(highScores);
         if(highScores[highScores.length-1].getScore() < entry.getScore()){

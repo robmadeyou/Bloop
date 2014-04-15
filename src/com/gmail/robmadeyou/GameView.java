@@ -142,6 +142,16 @@ public class GameView extends View{
                 }
             }
         }
+
+        /*
+         * This next loop goes through the world again, except
+         * this time the focus is on setting the texture.
+         * It sets all stone textures that have a single air block
+         * above them to Dirt with Grass on top textures, and all
+         * other stone textures are just dirt. This creates the effect
+         * that's visible in minecraft, that only the very top dirt block
+         * that is exposed to the sun has grass on top
+         */
         for(int i = 0; i < World.activeWorld.get().length; i++){
             for(int j = 0; j < World.activeWorld.get()[i].length; j++){
                 try{
@@ -157,58 +167,84 @@ public class GameView extends View{
         }
     }
 
+    /**
+     * Update loop, this is where all of the game logic happens
+     */
     @Override
     public void update(){
-        if(SerialRead.jump){
-            p.jump(-4);
-        }
-        if(SerialRead.run){
-            p.moveRight();
-        }
+        //Set the score label to what ever the current score is
         score.set("&?50SCORE "+ Bloop.currentScore);
+        //Set the X location of the score label accordingly, this is useful if user wants a different screen size
         score.setDrawX(Screen.getWidth() / 2 - ((score.getChildren().size() * 50) / 2));
+        //A check to see if the timer is finished to let the wall try and catch up with the player
         if(wallStart.isDone()){
             wallDelayCurrent++;
         }
-
+        //Check if wall is able to increase in index, with the main variable being wallDelayCurrent
         if(wallDelay < wallDelayCurrent){
             if(wallIndex < 2000){
+                //Check to see if world index is less than the current world index,
+                // if it isn't then that must mean that the game is over
                 if(World.activeWorld.get().length - 1 > wallIndex){
                     wallIndex++;
+                    //Loop through the new index through all the blocks in the world[wallIndex] array
                     for(int i = 0; i < World.activeWorld.get()[wallIndex].length; i++){
                         World.activeWorld.get()[wallIndex][i].setType(TileType.BRICK);
                     }
                 }else{
+                    //Game over!
                     onDeath();
                 }
             }
+            //Set the variable to 0 to reset the counter and be able to go again
             wallDelayCurrent = 0;
         }
-
+        //Set the Player label in relevance to the line of path that it must follow
         playerText.setDrawX((Screen.getWidth()  / 2 - 200) + (((Screen.getWidth() / 2 + 200) - (Screen.getWidth() / 2 - 200)) * ((p.getDrawX() / World.activeWorld.getDimensions()) / World.activeWorld.get().length)));
+        //Set the World label in relevance to the line of path that it must follow
         wallText.setDrawX((Screen.getWidth() / 2 - 200) + (((Screen.getWidth() / 2 + 200) - (Screen.getWidth() / 2 - 200)) * ((double)(wallIndex) / World.activeWorld.get().length)));
+        //Set the score variable
         Bloop.currentScore = (int) Math.round(p.getDrawX() / World.activeWorld.getDimensions()) * Bloop.currentLevel;
+        //Check if player has jumped out of the map, if they have then proceed to next level
         if(p.getDrawX() / World.activeWorld.getDimensions() > 200){
             onWin();
         }
     }
 
+    /**
+     * On death method, where objects go to die
+     * Prompts to enter name for High score checks, if score > lowest score,
+     * it is added to the high scores then
+     */
     public void onDeath(){
         HighScoresView view =(HighScoresView) Bloop.highScoresView;
+        //Here we reset the level, and only on death
+        //Without this the players where able to continue off the same level even after dying
+        Bloop.currentLevel = 1;
         if(view.addScore(new HighScoresEntry(JOptionPane.showInputDialog("What is your name?"), Bloop.currentScore))){
             JOptionPane.showMessageDialog(null, "Congratulations, you're in the high scores!");
+            //Go to high scores view to see ranking
+            getGame().changeView(view);
+        }else{
+            //Go to main menu
+            getGame().changeView(Bloop.menuView);
         }
-        Bloop.currentLevel = 1;
-        getGame().changeView(Bloop.menuView);
     }
 
+    /**
+     * Winning!
+     * Repeats this class, player runs through the map again to try and
+     * complete it
+     */
     public void onWin(){
+        //Increase the level after every win to make it more difficult
         Bloop.currentLevel++;
         getGame().changeView(new GameView());
     }
 
+    /**
+     * Aren't disposing of anything currently so need to put anything in the method body.
+     */
     @Override
-    public void dispose(){
-
-    }
+    public void dispose(){}
 }
