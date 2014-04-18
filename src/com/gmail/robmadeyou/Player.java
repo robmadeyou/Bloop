@@ -1,7 +1,6 @@
 package com.gmail.robmadeyou;
 
 import com.age.graphics.effects.Animation;
-import com.age.graphics.effects.Color;
 import com.age.graphics.effects.TextureLoader;
 import com.age.logic.entity.Entity;
 import com.age.logic.input.Keyboard;

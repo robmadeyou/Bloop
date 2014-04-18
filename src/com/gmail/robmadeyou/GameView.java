@@ -209,6 +209,12 @@ public class GameView extends View{
         if(p.getDrawX() / World.activeWorld.getDimensions() > 200){
             onWin();
         }
+        /*
+            If player is inside the wall then game over
+         */
+        if(Math.round(p.getDrawX() / World.activeWorld.getDimensions()+1) <= wallIndex){
+            onDeath();
+        }
     }
 
     /**

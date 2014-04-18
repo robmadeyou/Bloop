@@ -1,14 +1,10 @@
 package com.gmail.robmadeyou;
 
-import com.age.Age;
 import com.age.Screen;
 import com.age.View;
-import com.age.event.Event;
-import com.age.graphics.effects.Color;
 import com.age.graphics.effects.Emitter;
 import com.age.graphics.effects.TextureLoader;
 import com.age.graphics.ui.Image;
-import com.age.helper.Random;
 
 /**
  * Created by apex on 14/03/14.
